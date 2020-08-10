@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Meta Tags-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <meta name="description" content="Universe Mines - Around The World.">
+    <meta name="keywords" content="Universe, Mines, Universe Mines">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/favicon_io/favicon-32x32.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--Favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon_io/site.webmanifest">
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../css/menu.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <title>Universe Mines</title>
+</head>
+
+<body>
+
+
+
+    <main>
+        <div class="header">
+            <div class="row mb-0">
+                <div class="col s3">
+                    <input type="checkbox" id="myInput">
+                    <label for="myInput" class="hamburger">
+                        <span class="bar top"></span>
+                        <span class="bar middle"></span>
+                        <span class="bar bottom"></span>
+                    </label>
+                    <aside>
+                        <div class="aside-section aside-left">
+                            <div class="aside-content">
+                                <h2> Universe Mines </h2>
+                                <h5> Around the world </h5>
+                                <a class="button" href="/"> Home </a>
+                            </div>
+                        </div>
+                        <div class="aside-section aside-right">
+                            <ul class="aside-list">
+                                <li><a href="/" class="aside-anchor">Home</a></li>
+                                <li><a href="/views/Products.html" class="aside-anchor">Products</a></li>
+                                <li><a href="/views/AboutUs.html" class="aside-anchor">About Us</a></li>
+                                <li><a href="/views/ContactUs.html" class="aside-anchor">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col s6 center-align">
+                    <img src="../images/Logo1.png" />
+                </div>
+                <div class="col s12 m3">
+                    <div class="input-field search-bar mb-0">
+                        <input type="text" id="autocomplete-input" class="autocomplete">
+                        <i class="material-icons prefix">search</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="contact-block">
+
+                        <h5>Contact Us</h5>
+                        <div class="cinnomon-text weight-600">Mr. Anand Choudhary<br><br></div>
+                        <div class="cinnomon-text weight-600">Mobile Number</div>
+                        <div>+91-9321168058<br><br></div>
+                        <div class="cinnomon-text weight-600">Email</div>
+                        <div>universemines@gmail.com<br><br></div>
+                        <div class="cinnomon-text weight-600">Address</div>
+
+                        <div>
+                            The Empire Business Centre, 17th Floor, Reliable Tech Park,
+                            <br> Airoli, Navi Mumbai - 400708
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col s12 m12 center-align contact-form">
+                    <br><br>
+
+                    <h6>Send us your enquiry now</h6>
+                    <form class="col s6 offset-s3 contact-form-block">
+                        <div class="row mb-0">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="name" name="name" type="text" required>
+                                <label for="name">Name</label>
+                            </div>
+                        </div>
+                        <div class="row mb-0">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input id="email" name="email" type="email" required>
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row mb-0">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="phone" name="phone" type="text" required>
+                                <label for="phone">Phone Number</label>
+                            </div>
+                        </div>
+                        <div class="row mb-0">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mode_edit</i>
+                                <input id="queries" name="queries" type="text" required />
+                                <label for="queries">Queries</label>
+                            </div>
+
+                        </div>
+                        <div class="row center">
+                            <a class="button" id="submit" type="submit" onclick="onMailSend()">Submit</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container center-align contact-text">
+            <h6>We welcome the opportunity to resolve difficult supply problems as providing materials that are needed
+                on a quick or emergency requirement.
+                <br><br> Feel free to reach us. We would happy to answer your questions and reach to you as soon as
+                possible.</h6>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Footer Content</h5>
+                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your
+                            footer
+                            content.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li><a href="/" class="grey-text text-lighten-3">Home</a></li>
+                            <li><a href="/views/Products.html" class="grey-text text-lighten-3">Products</a></li>
+                            <li><a href="/views/AboutUs.html" class="grey-text text-lighten-3">About Us</a></li>
+                            <li><a href="/views/ContactUs.html" class="grey-text text-lighten-3">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2020 Universe Mines Pvt. Ltd.
+                    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../js/materialize.js"></script>
+    <script src="../js/init.js"></script>
+
+</body>
+
+</html>

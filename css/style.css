@@ -23,25 +23,74 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 main {
   height: 100%;
   position: relative;
-  overflow: hidden;
   flex: 1 0 auto;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--rose-sharon);
+  color: var(--white);
+}
+
+/* Helpers */
+.onnau-blue-text {
+  color: var(--oonau-blue);
+}
+
+.cinnomon-text {
+  color: var(--cinnamon);
+}
+
+.orient-text {
+  color: var(--orient-blue);
+}
+
+.rose-text {
+  color: var(--rose-sharon);
+}
+.weight-600 {
+  font-weight: 600;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.search-bar mb-0 {
+  margin-right: 20px;
 }
 
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
   font-size: inherit;
 }
 
+/* Home Page */
 .slider {
   z-index: 1;
-  top: 50px;
 }
 
 .slider .slides .caption {
@@ -54,6 +103,64 @@ main {
   opacity: 0.9;
 }
 
-.page-footer {
-  background-color: var(--rose-sharon);
+/* Products */
+
+.collection {
+  margin-top: 60px;
+}
+
+/* Contact Us  */
+.contact-block {
+  height: 450px;
+  width: 450px;
+  border-radius: 50%;
+  padding: 8%;
+  text-align: center;
+  margin: 5% auto;
+  -webkit-box-shadow: 0 2px 2px 0 var(--oonau-blue), 0 3px 1px -2px var(--oonau-blue), 0 1px 5px 0 var(--cinnamon);
+  box-shadow: 0 2px 2px 0 var(--oonau-blue), 0 3px 1px -2px var(--oonau-blue), 0 1px 5px 0 var(--cinnamon);
+}
+
+.contact-form {
+  background-image: url("../images/burst-kUqqaRjJuw0-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.contact-form .material-icons {
+  color: var(--white);
+}
+
+.contact-form-block {
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+.contact-text {
+  margin: 50px auto;
+}
+
+/* label color */
+.input-field input {
+  color: #fff;
+}
+
+/* label color */
+.input-field label {
+  color: #fff;
+}
+/* label focus color */
+.input-field input:focus + label {
+  color: #fff !important;
+}
+/* label underline focus color */
+.input-field input:focus {
+  border-bottom: 1px solid #fff !important;
+  box-shadow: 0 1px 0 0 #fff !important;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #fff !important;
 }
