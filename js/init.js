@@ -15,6 +15,27 @@ $(document).ready(function () {
       $("main").css("overflow", "");
     }
   });
+
+  $(".view a").on('click', function () {
+    $('.products ul').toggleClass('list');
+    return false;
+  });
+
+  $('.parallax').parallax();
+
+
+  $(".filter").on("keyup", function () {
+    var input = $(this).val().toUpperCase();
+
+    $(".product-card").each(function () {
+      if ($(this).data("product").toUpperCase().indexOf(input) < 0) {
+        console.log(input);
+        $(this).hide();
+      } else {
+        $(this).show();
+      }
+    })
+  });
 });
 
 (function ($) {

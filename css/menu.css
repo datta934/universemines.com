@@ -1,52 +1,3 @@
-.aside-section {
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    z-index: 2;
-}
-
-.aside-left {
-    display: none;
-    width: 40%;
-    left: 0;
-    background-color: var(--rose-sharon);
-    -webkit-transform: translateY(-100%);
-    -moz-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    -o-transform: translateY(-100%);
-    transform: translateY(-100%);
-    transition: transform 0.4s ease-in-out;
-}
-
-.aside-right {
-    width: 100%;
-    right: 0;
-    background-color: var(--orient-blue);
-    -webkit-transform: translateX(100%);
-    -moz-transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    -o-transform: translateX(100%);
-    transform: translateX(100%);
-    transition: transform 0.4s ease-in-out;
-}
-
-.aside-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-top: 150px;
-    text-align: left;
-    padding-left: 50px !important;
-}
-
-.aside-content {
-    margin-top: 150px;
-    padding: 0 40px;
-    position: relative;
-    color: var(--white);
-    text-align: center;
-}
-
 .aside-list li {
     margin-bottom: 20px;
 }
@@ -86,109 +37,167 @@
 }
 
 .aside-anchor {
-    padding-bottom: 7px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 30px;
     position: relative;
-    font-weight: 500;
 }
 
-input[type="checkbox"] {
+#menuToggle {
     display: none;
 }
 
-input[type="checkbox"]:checked ~ aside .aside-left {
-    transform: translateY(0%);
+.open {
+    width: 35px;
+    height: 4px;
+    background-color: var(--science-blue);
+    display: block;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    top: 8px;
+    z-index: 9;
 }
 
-input[type="checkbox"]:checked ~ aside .aside-right {
-    transform: translateX(0%);
+.open:before {
+    content: "";
+    background-color: var(--science-blue);
+    width: 35px;
+    height: 4px;
+    display: block;
+    border-radius: 2px;
+    position: relative;
+    top: -8px;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
 }
 
-input[type="checkbox"]:checked ~ label .bar {
-    background-color: #fff;
+.open:after {
+    content: "";
+    background-color: var(--science-blue);
+    width: 35px;
+    height: 4px;
+    display: block;
+    border-radius: 2px;
+    position: relative;
+    top: 4px;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
 }
 
-input[type="checkbox"]:checked ~ label .top {
-    -webkit-transform: translateY(0px) rotateZ(45deg);
-    -moz-transform: translateY(0px) rotateZ(45deg);
-    -ms-transform: translateY(0px) rotateZ(45deg);
-    -o-transform: translateY(0px) rotateZ(45deg);
-    transform: translateY(0px) rotateZ(45deg);
+.menuOpen {
+    width: 24px;
+    height: 20px;
+    display: block;
+    padding: 15px;
+    cursor: pointer;
 }
 
-input[type="checkbox"]:checked ~ label .bottom {
-    -webkit-transform: translateY(-15px) rotateZ(-45deg);
-    -moz-transform: translateY(-15px) rotateZ(-45deg);
-    -ms-transform: translateY(-15px) rotateZ(-45deg);
-    -o-transform: translateY(-15px) rotateZ(-45deg);
-    transform: translateY(-15px) rotateZ(-45deg);
+.menuOpen:hover .open:before {
+    top: -9px;
 }
 
-input[type="checkbox"]:checked ~ label .middle {
-    width: 0;
+.menuOpen:hover .open:after {
+    top: 5px;
 }
 
-.middle {
+.menu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: var(--orient-blue);
+    z-index: 2;
+}
+
+.menu label {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.menu .menuContent {
+    position: relative;
+    top: 40%;
+    font-size: 54px;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: -170px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
     margin: 0 auto;
 }
 
-.hamburger {
-    top: 0px;
-    display: inline-block;
-    padding: 7px 10px;
+.menu ul li {
+    padding: 20px 0;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+.menu ul li a:hover {
+    color: #ff8702;
+}
+
+/* .menu ul li:hover {
+    background: white;
+} */
+
+.menuEffects {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.menuEffects ul {
+    transform: translateY(0%);
+    transition: all 0.5s;
+}
+
+#menuToggle:checked ~ .menuEffects {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s;
+}
+
+#menuToggle:checked ~ .menuEffects ul {
+    opacity: 1;
+}
+
+#menuToggle:checked ~ .menuOpen .open {
     background-color: transparent;
-    cursor: pointer;
-    margin: 10px;
-    z-index: 3;
-    position: fixed;
 }
 
-.bar {
-    display: block;
-    background-color: var(--orient-blue);
-    width: 30px;
-    height: 3px;
-    border-radius: 5px;
-    margin: 5px auto;
-    transition: background-color 0.4s ease-in, transform 0.4s ease-in, width 0.4s ease-in;
-}
-
-h1 {
-    margin: 0;
-    position: relative;
-    top: 50%;
-    left: 0;
+#menuToggle:checked ~ .menuOpen .open:before {
+    content: "";
+    background-color: white;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 0;
     right: 0;
-    transform: translateY(-50%);
-    text-align: center;
-    font-size: 30px;
+    z-index: 1;
 }
 
-.button {
-    display: inline-block;
-    background-image: none;
-    border: none;
-    background-color: transparent;
-    padding-bottom: 7px;
+#menuToggle:checked ~ .menuOpen .open:after {
+    content: "";
+    background-color: white;
+    transform: rotate(-45deg);
     position: relative;
-    cursor: pointer;
-    font-size: 20px;
-    color: var(--white);
-    padding: 7px 50px;
-    border: 2px solid var(--white);
+    top: 0;
+    right: 0;
+    z-index: 1;
 }
 
-@media (min-width: 992px) {
-    h1 {
-        font-size: 40px;
-    }
-    .aside-left {
-        display: block;
-    }
-
-    .aside-right {
-        width: 60%;
-    }
+#menuToggle:not(:checked) ~ .menuEffects ul {
+    transform: translateY(-30%);
 }
