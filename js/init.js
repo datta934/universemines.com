@@ -15,26 +15,21 @@ $(document).ready(function () {
   $('.parallax').parallax();
 
 
-  $(".search").on("keyup", function () {
+  $(".filter").on("keyup", function () {
     var input = $(this).val().toUpperCase();
 
     $(".product-card").each(function () {
       if ($(this).data("product").toUpperCase().indexOf(input) < 0) {
-        console.log(input);
-        $(this).hide();
+        $(this).removeClass("show");
       } else {
-        $(this).show();
+        $(this).addClass("show");
       }
     })
   });
 
-  $(".filter").focus(function () {
-    $(".search-img").addClass("search-expanded");
-  });
 
-  $(".filter").focusout(function () {
-    $(".search-img").removeClass("search-expanded");
-  });
+
+
 
 
 
