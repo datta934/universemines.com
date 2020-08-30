@@ -1,13 +1,4 @@
 $(document).ready(function () {
-  $('input.autocomplete').autocomplete({
-    data: {
-      "Apple": null,
-      "Apple1": null,
-      "Microsoft": null,
-      "Google": 'https://placehold.it/250x250'
-    },
-  });
-
   $("#myInput").change(function () {
     if (this.checked) {
       $("main").css("overflow", "hidden");
@@ -24,7 +15,7 @@ $(document).ready(function () {
   $('.parallax').parallax();
 
 
-  $(".filter").on("keyup", function () {
+  $(".search").on("keyup", function () {
     var input = $(this).val().toUpperCase();
 
     $(".product-card").each(function () {
@@ -36,6 +27,24 @@ $(document).ready(function () {
       }
     })
   });
+
+  $(".filter").focus(function () {
+    $(".search-img").addClass("search-expanded");
+  });
+
+  $(".filter").focusout(function () {
+    $(".search-img").removeClass("search-expanded");
+  });
+
+
+
+  filterSelection("all");
+  $(".collection .collection-item").on('click', function () {
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active')
+  })
+
+
 });
 
 (function ($) {
@@ -50,4 +59,35 @@ $(document).ready(function () {
 })(jQuery); // end of jQuery name space
 
 
+
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filter-div");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    filterRemove(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) filterAdd(x[i], "show");
+  }
+}
+
+function filterAdd(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+  }
+}
+
+function filterRemove(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
 
