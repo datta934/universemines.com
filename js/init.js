@@ -86,3 +86,16 @@ function filterRemove(element, name) {
   element.className = arr1.join(" ");
 }
 
+
+function onMailSend() {
+  var name = document.getElementById("name").value;
+  var emailId = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var message = document.getElementById("message").value;
+  if (name === '' || emailId === '' || phone === '' || message === '') {
+    alert('Please fill all details in the form');
+  } else {
+    window.location.href = "mailto:uinversemines@gmail.com?subject=UNIVERSE MINES ENQUIRY&body=Name: " + name + "%0DEmail: " + emailId + "%0DPhone: " + phone + "%0DMessage: " + message;
+
+  }
+}

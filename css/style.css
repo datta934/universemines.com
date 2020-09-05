@@ -240,7 +240,6 @@ main {
 .products .list li .product-name p {
   color: #333;
   text-transform: none !important;
-  width: 440px;
 }
 .products .list li .product-image {
   height: 243px;
@@ -269,14 +268,6 @@ main {
 }
 .products.catalog {
   margin: 80px auto 40px auto;
-}
-.products ul li {
-  float: left;
-  margin: 10px 38px;
-  padding: 0 27px;
-  width: 230px;
-  height: 244px;
-  position: relative;
 }
 .products ul li img {
   position: absolute;
@@ -395,4 +386,97 @@ main {
   font-size: 15px;
   background: rgb(238 231 231 / 68%);
   text-align: center;
+}
+.chip {
+  height: auto;
+}
+@media screen and (max-width: 600px) {
+  .products ul li {
+    margin: 9px !important;
+  }
+  .card .card-content {
+    height: 150px;
+  }
+  .products .list li {
+    float: none;
+    display: block;
+    margin: 15px 38px;
+    width: 95%;
+    height: 100%;
+    overflow: auto;
+  }
+  .products ul li {
+    float: left;
+    margin: 10px 38px;
+    padding: 0 27px;
+    width: 97%;
+    height: 244px;
+    position: relative;
+  }
+  .products .list li .product-name {
+    float: none;
+  }
+  .products .list li .product-image,
+  .products .list li .product-name {
+    width: 100%;
+  }
+
+  .products ul.list li p,
+  .products ul.list li .product-chips {
+    padding: 0;
+  }
+  .products ul.list li .product-details {
+    padding: 0 0 25px 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .card .card-content {
+    height: 200px;
+  }
+  .products .list li {
+    float: none;
+    display: block;
+    margin: 25px 0px;
+    width: 100%;
+    height: 340px;
+    padding: 0;
+  }
+  .products ul li {
+    float: left;
+    margin: 10px 38px;
+    padding: 0 27px;
+    width: 230px;
+    height: 244px;
+    position: relative;
+  }
+  .products .list li .product-image .p-img {
+    width: 100%;
+  }
+  .products .list li .product-image {
+    margin: 0 25px 0 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .card .card-content {
+    height: 150px;
+  }
+  .products .list li {
+    float: none;
+    display: block;
+    margin: 15px 38px;
+    width: 95%;
+    height: 300px;
+  }
+  .products ul li {
+    float: left;
+    margin: 10px 38px;
+    padding: 0 27px;
+    width: 230px;
+    height: 244px;
+    position: relative;
+  }
+  .products .list li .product-image .p-img {
+    width: 200px;
+  }
 }
